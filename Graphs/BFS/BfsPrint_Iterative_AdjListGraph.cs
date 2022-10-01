@@ -27,8 +27,8 @@ public class BfsPrint_Iterative_AdjListGraph
     BfsIterativePrint('a', graph); // acbedf
   }
 
-  // Use stack, will visit the first neighbor from adjlist first (FIFO),
-  // process on pop, add neighbors to stack, repeat while stack not empty
+  // Use queue, will visit the first neighbor from adjlist first (FIFO),
+  // process on dequeue, add neighbors to queue, repeat while queue not empty
   public static void BfsIterativePrint(char source, Dictionary<char, List<char>> graph)
   {
     Dictionary<char, bool> visited = new(); // so we don't visit same node twice
