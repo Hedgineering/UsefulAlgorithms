@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Hedgineering.Algorithms.WeightedDFS;
+namespace Hedgineering.Algorithms.Graphs.DFS;
 
 /**
  * This is a DFS for a weighted directed graph
@@ -11,12 +11,14 @@ namespace Hedgineering.Algorithms.WeightedDFS;
  *   Edges with startNode, endNode, and weight
  *   Graph represented with an adjacency matrix such that matrix[startNode][endNode] = weight
  */
-public class Node<T> {
-    public T value;
+public class Node<T>
+{
+  public T value;
 }
 
-public class Edge<T, U> where U : IComparable<U> {
-    Node<T> start;
-    Node<T> end;
-    U weight;
+public class Edge<T, U> where U : IComparable<U>
+{
+  Node<T> start;
+  Node<T> end;
+  U weight;
 }
