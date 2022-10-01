@@ -8,10 +8,8 @@ namespace Hedgineering.Algorithms.Graphs.DFS;
  * It is implemented with an adjacency list.
  * It contains both iterative and recursive implementations.
  */
-public class DfsPrint_IterativeRecursive_AdjListGraph
-{
-  public static void Main()
-  {
+public class DfsPrint_IterativeRecursive_AdjListGraph {
+  public static void Main() {
     Dictionary<char, List<char>> graph = new();
     graph.Add('a', new List<char>() { 'c', 'b' });
     graph.Add('b', new List<char>() { 'd', 'a' });
@@ -33,15 +31,13 @@ public class DfsPrint_IterativeRecursive_AdjListGraph
 
   // Use stack, will visit the last neighbor from adjlist first (LIFO),
   // process on pop, add neighbors to stack, repeat while stack not empty
-  public static void DfsIterativePrint(char source, Dictionary<char, List<char>> graph)
-  {
+  public static void DfsIterativePrint(char source, Dictionary<char, List<char>> graph) {
     Dictionary<char, bool> visited = new(); // so we don't visit same node twice
     Stack<char> stack = new();
     stack.Push(source);
 
     // Iterate until stack is empty
-    while (stack.Count != 0)
-    {
+    while (stack.Count != 0) {
       // Get current node
       char curr = stack.Pop();
 
@@ -53,8 +49,7 @@ public class DfsPrint_IterativeRecursive_AdjListGraph
       Console.WriteLine(curr);
 
       // Handle Neighbors
-      foreach (char c in graph[curr])
-      {
+      foreach (char c in graph[curr]) {
         stack.Push(c);
       }
     }
@@ -63,8 +58,7 @@ public class DfsPrint_IterativeRecursive_AdjListGraph
   // Recurse while not visited, it will visit the first neighbor in adjlist first
   // uses recursive stack frame as the stack and base case on visited = true if cyclic or on 
   // lack of neighbors if acyclic
-  public static void DfsRecursivePrint(char source, Dictionary<char, List<char>> graph, Dictionary<char, bool> visited)
-  {
+  public static void DfsRecursivePrint(char source, Dictionary<char, List<char>> graph, Dictionary<char, bool> visited) {
     // Check & Update Visited to avoid cycles
     if (visited.ContainsKey(source) && visited[source]) return;
     visited[source] = true;
@@ -73,8 +67,7 @@ public class DfsPrint_IterativeRecursive_AdjListGraph
     Console.WriteLine(source);
 
     // Handle Neighbors
-    foreach (char c in graph[source])
-    {
+    foreach (char c in graph[source]) {
       DfsRecursivePrint(c, graph, visited);
     }
   }
