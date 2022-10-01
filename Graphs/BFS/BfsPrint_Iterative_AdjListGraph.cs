@@ -8,10 +8,8 @@ namespace Hedgineering.Algorithms.Graphs.BFS;
  * It is implemented with an adjacency list.
  * It contains both iterative and recursive implementations.
  */
-public class BfsPrint_Iterative_AdjListGraph
-{
-  public static void Main()
-  {
+public class BfsPrint_Iterative_AdjListGraph {
+  public static void Main() {
     Dictionary<char, List<char>> graph = new();
     graph.Add('a', new List<char>() { 'c', 'b' });
     graph.Add('b', new List<char>() { 'd', 'a' });
@@ -29,8 +27,7 @@ public class BfsPrint_Iterative_AdjListGraph
 
   // Use queue, will visit the first neighbor from adjlist first (FIFO),
   // process on dequeue, add neighbors to queue, repeat while queue not empty
-  public static void BfsIterativePrint(char source, Dictionary<char, List<char>> graph)
-  {
+  public static void BfsIterativePrint(char source, Dictionary<char, List<char>> graph) {
     Dictionary<char, bool> visited = new(); // so we don't visit same node twice
     Queue<char> queue = new();
     queue.Enqueue(source);
