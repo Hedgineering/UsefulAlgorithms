@@ -33,8 +33,7 @@ public class BfsPrint_Iterative_AdjListGraph {
     queue.Enqueue(source);
 
     // Iterate until queue is empty
-    while (queue.Count != 0)
-    {
+    while (queue.Count != 0) {
       // Get current node
       char curr = queue.Dequeue();
 
