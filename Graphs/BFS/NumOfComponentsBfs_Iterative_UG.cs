@@ -33,6 +33,8 @@ namespace Hedgineering.Algorithms.Graphs.BFS;
     int count = 0;
 
     foreach(int node in graph.Keys) {
+      // A visited node cannot be the starting point of a new 
+      // component (island) to explore
       if(visited.Contains(node)) continue;
 
       // BFS
