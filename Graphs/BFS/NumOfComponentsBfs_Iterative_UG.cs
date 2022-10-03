@@ -26,4 +26,35 @@ namespace Hedgineering.Algorithms.Graphs.BFS;
     // ======================================================================================
     Console.WriteLine(NumOfComponentsBfsIterative(graph)); // 2
   }
+
+  public static int NumOfComponentsBfsIterative(Dictionary<int, List<int>> graph) {
+    HashSet<int> visited = new();
+    Queue<int> q = new();
+    int count = 0;
+
+    foreach(int node in graph.Keys) {
+      if(visited.Contains(node)) continue;
+
+      // DFS
+      q.Clear();
+      q.Enqueue(node);
+
+      // Explore component via dfs
+      while(q.Count > 0) {
+        // Get current
+        int curr = q.Dequeue();
+        // Mark as visited
+        visited.Add(curr);
+        // Prep all neighbors for processing
+        foreach(int neighbor in graph[curr]) {
+          if(!visited.Contains(neighbor)) q.Enqueue(neighbor);
+        }
+      }
+
+      // Increment explored components
+      count++;
+    }
+
+    return count;
+  }
 }
