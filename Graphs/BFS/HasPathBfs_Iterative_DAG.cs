@@ -10,7 +10,7 @@ namespace Hedgineering.Algorithms.Graphs.BFS;
  * Made in parallel to : https://youtu.be/tWVWeAqZ0WU
  * Similar to : ../DFS/HasPathDfs_IterativeRecursive_DAG.cs
  */
- public class HasPathDfs_IterativeRecursive_DAG {
+ public class HasPathBfs_Iterative_DAG {
   public static void Main() {
     Dictionary<char, List<char>> graph = new();
     graph.Add('f', new List<char>() { 'g', 'i' });
