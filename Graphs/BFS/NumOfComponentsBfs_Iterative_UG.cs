@@ -35,11 +35,11 @@ namespace Hedgineering.Algorithms.Graphs.BFS;
     foreach(int node in graph.Keys) {
       if(visited.Contains(node)) continue;
 
-      // DFS
+      // BFS
       q.Clear();
       q.Enqueue(node);
 
-      // Explore component via dfs
+      // Explore component via bfs
       while(q.Count > 0) {
         // Get current
         int curr = q.Dequeue();
