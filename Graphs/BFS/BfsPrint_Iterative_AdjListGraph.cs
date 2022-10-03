@@ -4,9 +4,11 @@ using System.Collections.Generic;
 namespace Hedgineering.Algorithms.Graphs.BFS;
 
 /**
- * This is a BFS for an unweighted directed graph.
+ * This is to print all nodes via a BFS for an unweighted directed graph.
  * It is implemented with an adjacency list.
  * It contains both iterative and recursive implementations.
+ * Made in parallel to : https://youtu.be/tWVWeAqZ0WU
+ * Similar to : ../BFS/BfsPrint_Iterative_AdjListGraph.cs
  */
 public class BfsPrint_Iterative_AdjListGraph {
   public static void Main() {

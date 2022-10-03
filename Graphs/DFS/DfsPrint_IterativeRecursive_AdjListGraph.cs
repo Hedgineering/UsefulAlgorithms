@@ -4,9 +4,11 @@ using System.Collections.Generic;
 namespace Hedgineering.Algorithms.Graphs.DFS;
 
 /**
- * This is a DFS for an unweighted directed graph.
+ * This is to print all nodes via a DFS for an unweighted directed graph.
  * It is implemented with an adjacency list.
  * It contains both iterative and recursive implementations.
+ * Made in parallel to : https://youtu.be/tWVWeAqZ0WU
+ * Similar to : ../DFS/DfsPrint_IterativeRecursive_AdjListGraph.cs
  */
 public class DfsPrint_IterativeRecursive_AdjListGraph {
   public static void Main() {
